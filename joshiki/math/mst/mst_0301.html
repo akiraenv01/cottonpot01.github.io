@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<!--
+make 2017/2/9
+upgrade 2026/01/01
+-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+   場合分け（Divide into cases） 例題１
+  </title>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta name="author" content="Ak!ra Watanabe">
+  <meta name="keywords" content="小中学校で学びたかった,算数,数学">
+  <base href="https://akiraenv01.github.io/website/joshiki/math/">
+</head>
+
+<body>
+<!--facebook-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--content-->
+<div align="center">
+<h1>
+ 場合分け（Divide into cases） 例題１
+</h1>
+ 
+<br>
+<br>
+ <table width="800">
+ <tr>
+ <td>
+ <b>場合分け（Divide into cases）</b>...<br>
+ 物事を考えるとき、「ある場合はどうで、そうでない場合はこう」というように、考える対象の出方によって異なる対応または回答が必要であることがあります。
+ 複雑そうに見える問題を分割して場合分けして解く、という手段は算数や数学だけに限らず役に立つ場面があるでしょう。
+ <br>
+ <br>
+（例題）<br>
+ここに金貨が８枚あって、その中に本物より重さの軽い偽物が１枚混ざっています。
+図のような天秤ばかりを２回だけ使うとどれが偽物かを判別できます。その理由を説明してください。<br>
+
+ </td>
+ </tr>
+ </table>
+
+<img src="image/mst/m3table1.jpg" width="40%" height="30%" alt="画像が表示されていません"><br>
+
+ <table width="800">
+ <tr>
+ <td>
+<br>
+（考え方）<br>
+天秤ばかりを３回まで使ってよいのなら、
+偽物を含む８枚の金貨を【４枚：４枚】に分けて天秤ばかりにのせて重さを比べ、軽い方の４枚を取り出してまたそれを【２枚：２枚】に分けて天秤ばかりにのせ、
+また軽い方の２枚を取り出して最後にそれを【１枚:１枚】に分けて天秤ばかりにのせるとどれが偽物かを判別できます。
+しかし今回は天秤ばかりを２回しか使えないので工夫が必要です。<br>
+<br>
+そこで偽物を含む８枚の金貨を【３枚：３枚：２枚】に分けて、天秤ばかりの左右それぞれに３枚ずつのせます。これでこの問題は解決できます。なぜなら、<br>
+<br>
+
+<ol>
+  <li>左の３枚が軽かった場合 <br>
+      その３枚から２枚選んで１枚ずつ天秤ばかりの左右にのせる。<br>
+      <br>
+      <ol>
+        <li>左の１枚が軽かった場合 <br>
+            その１枚が偽物である。 <br><br>
+ 
+        <li>右の１枚が軽かった場合 <br>
+            その１枚が偽物である。 <br><br>
+ 
+        <li>左右が釣り合った場合 <br> 
+            残りの１枚が偽物である。 <br><br>
+      </ol>
+      <br>
+  <li>右の３枚が軽かった場合 <br>
+      左の３枚が軽かった場合と同様にして偽物を判別できる。 <br><br>
+  <li>左右が釣り合った場合 <br> 
+      残りの２枚を１枚ずつ天秤ばかりの左右にのせる。<br>
+      <br>
+      <ol>
+        <li>左の１枚が軽かった場合 <br>
+            その１枚が偽物である。 <br><br>
+ 
+        <li>右の１枚が軽かった場合 <br>
+            その１枚が偽物である。 
+      </ol>
+</ol>
+<br>
+以上のようにすれば天秤ばかりを２回使うだけで偽物を判別できます。 <br>
+<br>
+今回の解答は、あらゆる結果を考慮してそれらが個々に場合分けされています。この「場合分け」して考える経験はプログラムコードを書くとき重要なはたらきをします。
+<br>
+
+<br>
+<br>
+※解答の初めを読んで「なぜ８枚の金貨を【３枚:３枚:２枚】に分けることを思いついたのか」と感じる方がいらっしゃるかもしれません。
+これは「【４枚:４枚】という分け方では天秤ばかりを３回使ってしまうから【２枚:２枚:４枚】ならどうか？
+それでダメなら【２枚：２枚：３枚：１枚】ならどうか？」という試行錯誤の末に上手くいった場合分けであり、最初から突然閃いたものではないのでご注意ください。
+ </td>
+ </tr>
+ </table>
+
+<br>
+
+<!--twitter-->
+<a href="https://twitter.com/share"
+   class="twitter-share-button"
+   data-url="https://akiraenv01.github.io/website/joshiki/math/mst/mst_0301.html"
+   data-text="数学の方略 「場合分け（Divide into cases）」 例題１ (Ak!ra Watanabe's homepageより)">Tweet
+</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+  if(!d.getElementById(id)){js=d.createElement(s);
+  js.id=id;
+  js.src=p+'://platform.twitter.com/widgets.js';
+  fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+<br>
+
+<!--facebook-->
+<div class="fb-like"
+     data-href="https://akiraenv01.github.io/website/joshiki/math/mst/mst_0301.html"
+     data-width=""
+     data-layout="box_count"
+     data-action="like"
+     data-size="small"
+     data-share="true">
+</div>
+<br>
+<br>
+
+<!--content-->
+<a href="math_strategy.html">
+<font color="#33bb00">
+数学の方略（ほうりゃく）へ戻る
+</font>
+</a>
+<br>
+<br>
+<br>
+
+</div>
+</body>
+</html>
