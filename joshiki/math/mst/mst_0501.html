@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<!--
+make 2017/2/9
+upgrade 2026/01/01
+-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+   帰納的思考（Inductive thinking） 例題１
+  </title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta name="author" content="Ak!ra Watanabe">
+  <meta name="keywords" content="小中学校で学びたかった,算数,数学">
+  <base href="https://akiraenv01.github.io/website/joshiki/math/">
+</head>
+
+<body>
+<!--facebook-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--content-->
+<div align="center">
+<h1>
+帰納的思考（Inductive thinking） 例題１
+</h1>
+ 
+<br>
+<br>
+ <table width="800">
+ <tr>
+ <td>
+<b>帰納的思考（Inductive thinking） </b> ... <br>
+個々の事象や現象のような「具体的な例」から、広くどんな事象や現象にも当てはまる「一般論」を予想します。
+   『類推（Analogy）』で書いた事と重複しますが、「予想したものはあくまで予想に過ぎない」ということに注意しましょう。
+
+<br>
+<br>
+（例題）<br>
+\(1\) 以上の整数を \(2\) 乗した数は、 \(3\) で割りきれるかもしくは \(3\) で割ると余りが \(1\) になるかのいずれかであることを証明してください。<br>
+<br>
+（考え方）<br>
+そもそもよほど奇特な方でない限り、「\(1\) 以上の整数を \(2\) 乗した数は、 ...である」という主張をいきなり聞かされてピンとくる人はいません。<br>
+<br>
+なので、本当にそうなのか具体例を出して検証してみます。<br>
+<br>
+【 \(1\)で考えてみる】<br>
+\begin{equation*}
+ 1^{2}=1 \\
+ 1 \div 3 = 0 \text{余り} 1 
+\end{equation*}
+なるほど、 \(1\) 余りました。でもこれだけでは心もとないので、もっと具体例を出してみます。<br>
+<br> 
+
+【 \(2\)で考えてみる】<br>
+\begin{equation*}
+ 2^{2}=4 \\
+ 4 \div 3 = 1 \text{余り} 1 
+\end{equation*}
+これも \(1\) 余りました。<br>
+<br>
+
+【 \(3\)で考えてみる】<br>
+\begin{equation*}
+ 3^{2}=9 \\
+ 9 \div 3 = 3
+\end{equation*}
+これは\(3\)で割りきれました。<br>
+<br>
+
+【 \(4\)で考えてみる】<br>
+\begin{equation*}
+ 4^{2}=16 \\
+ 16 \div 3 = 5 \text{余り} 1 
+\end{equation*}
+これは \(1\) 余りました。<br>
+<br>
+<br>
+どうやら「\(1\) 以上の整数を \(2\) 乗した数は、 ...である」という主張は正しいようにみえます。
+しかしこれは \(1,2,3,4\)という具体例に対して正しかっただけであって、 \(512\) とか \(1067\) などはやってみないとわかりません。
+ただし、具体例の結果から、以下の二つのことが考察できます。<br>
+<br>
+一、元の整数が\(3\)の倍数であれば、それを\(2\)乗した数も\(3\)で割りきれる<br>
+二、元の整数が\(3\)の倍数でなければ、それを\(2\)乗した数は\(3\)で割りきれず\(1\)余る<br>
+<br>
+一と二の考察から、「整数を \(3\) の倍数かそうでないかに分類（場合分け）して解いてみる」という一つの方針を打ち出し、回答を試みます。
+\(m\) を正の整数とすると、 \(1\) 以上の整数 \(n\) は \(3m\) 、 \(3m-1\) 、 \(3m-2\) のどれかの形で表すことが出来ることを利用して<br>
+
+<ol>
+  <li>　\(n\) が \(n=3m\)という形で表されるとき<br>
+        \begin{align*}  
+          n^{2} &=9m^{2} \\
+                &=3 \cdot 3m^{2}
+        \end{align*} 
+        
+        \(3m^{2}\) は整数だから \(n^{2}\) は \(3\) で割りきれる。<br><br>
+
+  <li>　\(n\) が \(n=3m-1\)という形で表されるとき
+        \begin{align*}  
+          n^{2} &=(3m-1) \times (3m-1)  \\
+                &=3m(3m-1) -(3m-1)      \\
+                &=9m^{2} -6m+1          \\
+                &=3 \cdot (3m^{2} -2m) +1
+        \end{align*} 
+        
+        \(3m^{2} -2m\) は整数だから \(n^{2}\) は \(3\) で割ると \(1\) 余る。<br><br>
+
+  <li>　\(n\) が \(n=3m-2\)という形で表されるとき
+        \begin{align*}  
+          n^{2} &=(3m-2) \times (3m-2)  \\
+                &=3m(3m-2) -2(3m-1)      \\
+                &=9m^{2} -12m+1          \\
+                &=3 \cdot (3m^{2} -4m) +1
+        \end{align*} 
+        
+        \(3m^{2} -4m\) は整数だから \(n^{2}\) は \(3\) で割ると \(1\) 余る。<br><br>
+</ol>
+
+1、2、3から「\(1\) 以上の整数を \(2\) 乗した数は、 \(3\) で割りきれるかもしくは \(3\) で割ると余りが \(1\) になるかのいずれかであること」が証明されました。<br>
+<br>
+
+今回の例題は、はじめから抽象的な「一般論」が与えられ、その正しさを証明する問題でした。
+\(1,2,3,4,...\)という具体例にあてはめ、そこから考察をし（『帰納的思考』）、その考察から回答の方針を打ち立て、それが解決に結びつきました。
+今回は「整数を \(3\) の倍数かそうでないかに分類（場合分け）して解いてみる」という一つの方針が<b>たまたま上手くいきました</b>が、
+もしそれでうまくいかなかったら他の方針を考えてみます。
+問題に対して辛抱強く立ち向かうことを身につけていきましょう。
+ </td>
+ </tr>
+ </table>
+
+<br>
+
+<!--twitter-->
+<a href="https://twitter.com/share"
+   class="twitter-share-button"
+   data-url="https://akiraenv01.github.io/website/joshiki/math/mst/mst_0501.html"
+   data-text="数学の方略 「帰納的思考（Inductive thinking）」 例題１ (Ak!ra Watanabe's homepageより)">Tweet
+</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+  if(!d.getElementById(id)){js=d.createElement(s);
+  js.id=id;
+  js.src=p+'://platform.twitter.com/widgets.js';
+  fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+<br>
+
+<!--facebook-->
+<div class="fb-like"
+     data-href="https://akiraenv01.github.io/website/joshiki/math/mst/mst_0501.html"
+     data-width=""
+     data-layout="box_count"
+     data-action="like"
+     data-size="small"
+     data-share="true">
+</div>
+<br>
+<br>
+
+<!--content-->
+<a href="math_strategy.html">
+<font color="#33bb00">
+数学の方略（ほうりゃく）へ戻る
+</font>
+</a>
+<br>
+<br>
+<br>
+
+</div>
+</body>
+</html>
