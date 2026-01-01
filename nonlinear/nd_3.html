@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<!--
+make 2020/11/16
+upgrade 2026/01/01
+-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+   不動点を探して（後編：グラフで考える）
+  </title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+  <base href="https://akiraenv01.github.io/website/nonlinear/">
+  <meta name="author" content="Ak!ra Watanabe">
+  <meta name="keywords" content="web diagram,蜘蛛の巣図,離散力学系,discrete dynamical system">
+</head>
+
+<body>
+<!--facebook-->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+	src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v9.0"
+	nonce="kJy0ibjj">
+</script>
+
+<!--content-->
+<div align="center">
+<h1>不動点を探して（後編：グラフで考える）</h1>
+
+ <table width="800"> 
+ <tr>
+ <td>
+関数\(f\)を用いて\(X_{n+1}=f(X_{n})\)と表される関係があるとき、<b>不動点</b>とは、
+ </td>
+ </tr>
+ </table>
+ \(X=f(X)\)
+  <table width="800"> 
+ <tr>
+   <td>
+     を満たすような\(X\)のことでした。これはグラフで考えると、縦軸に\(X_{n+1}\)、横軸に\(X_{n}\)を取ったときの\(X_{n+1}=X_{n}\)と\(X_{n+1}=f(X_{n})\)の交点を意味します。
+     例として \(X_{n+1}=0.02(100-X_{n})X_{n}\)を考えたとき、不動点\(X=0\)と\(X=50\)は\(X_{n+1}=X_{n}\)と \(X_{n+1}=0.02(100-X_{n})X_{n}\)の交点でした。<br>
+     <br>
+     しかし、交点における\(X_{n+1}=0.02(100-X_{n})X_{n}\)の傾きが違います。交点の近くに\(X_{N}\)（\(N\)は\(0\)以上の整数）を置いて、移り変わりを調べてみます。
+     以下、図の緑の点は座標\((X_{N}, X_{N})\)、黒の点は不動点、破線は\(X_{n+1}=X_{n}\)を表します。
+ </td>
+ </tr>
+  </table>
+  
+  <table width="800"> 
+ <tr>
+ <td>
+<img src="nld_3_1.png" alt="画像が表示されていません">
+ </td>
+ <td>
+  <img src="nld_3_2.png" alt="画像が表示されていません"> 
+   </td>
+ </tr>
+  </table>
+  
+   <table width="800"> 
+ <tr>
+ <td>
+   \(X=0\)からは遠ざかって行って、\(X=50\)には近づいていく様子が見られました。
+ここで\(f(X_{n})=0.02(100-X_{n})X_{n}\)を\(f(x)=0.02(100-x)x\)と置きなおして\(x=0\)と\(x=50\)での傾きを求めてみます。<br>
+ </td>
+ </tr>
+   </table>
+   \(\frac{df}{dx}=0.02(100-2x)\)
+  <table width="800"> 
+ <tr>
+ <td>
+なので<br>
+ </td>
+ </tr>
+  </table>
+  
+   <table width="700"> 
+   <tr>
+ <td>
+ \(\frac{df}{dx} \mid_{x=0}  =0.02(100-2\times 0)=2\)
+ </td>
+  <td>
+ \(\frac{df}{dx} \mid_{x=50} =0.02(100-2\times 50)=0\)
+ </td>
+ </tr>
+ </table>
+
+  <table width="800"> 
+ <tr>
+   <td>
+     <br>
+   つまり、不動点\(X\)での傾きが\(2\)のときは不動点から離れていき、傾きが\(0\)のときは近づいていきました。<br>
+   <br>
+   もっと一般化して調べてみます。
+ </td>
+ </tr>
+  </table>
+  
+    <table width="500"> 
+ <tr>
+ <td>
+ （a）不動点\(X\)での関数\(f\)の傾きが\(1\)より大きいとき<br>
+ （b）不動点\(X\)での関数\(f\)の傾きが\(-1\)より大きくて\(1\)より小さいとき<br>
+ （c）不動点\(X\)での関数\(f\)の傾きが\(-1\)より小さいとき<br>
+  （d）不動点\(X\)での関数\(f\)の傾きが\(1\)か\(-1\)のとき
+ </td>
+ </tr>
+    </table>
+    
+ <table width="800"> 
+ <tr>
+ <td>
+<img src="nld_3_3.png" alt="画像が表示されていません">
+ </td>
+ <td>
+  <img src="nld_3_4.png" alt="画像が表示されていません"> 
+   </td>
+ </tr>
+      </table>
+
+    <table width="600"> 
+ <tr>
+ <td>
+ （a）不動点\(X\)での関数\(f\)の傾き（黒の実線）が\(1\)より大きいとき（上図）
+ </td>
+ </tr>
+    </table>
+
+<table width="800"> 
+ <tr>
+ <td>
+<img src="nld_3_5.png" alt="画像が表示されていません">
+ </td>
+ <td>
+  <img src="nld_3_6.png" alt="画像が表示されていません"> 
+   </td>
+ </tr>
+      </table>
+
+         <table width="700"> 
+ <tr>
+ <td>
+   （b）不動点\(X\)での関数\(f\)の傾き（黒の実線）が\(-1\)より大きくて\(1\)より小さいとき（上図）
+ </td>
+ </tr>
+	 </table>
+
+      <table width="800"> 
+ <tr>
+ <td>
+<img src="nld_3_7.png" alt="画像が表示されていません">
+ </td>
+ <td>
+  <img src="nld_3_8.png" alt="画像が表示されていません"> 
+   </td>
+ </tr>
+      </table>
+   <table width="600"> 
+ <tr>
+ <td>
+  （c）不動点\(X\)での関数\(f\)の傾き（黒の実線）が\(-1\)より小さいとき（上図）
+ </td>
+ </tr>
+    </table>
+
+      <table width="800"> 
+ <tr>
+ <td>
+<img src="nld_3_9.png" alt="画像が表示されていません">
+ </td>
+ <td>
+  <img src="nld_3_10.png" alt="画像が表示されていません"> 
+   </td>
+ </tr>
+      </table>
+   <table width="600"> 
+ <tr>
+ <td>
+   （d）不動点\(X\)での関数\(f\)の傾きが\(1\)か\(-1\)のとき（上図）
+ </td>
+ </tr>
+    </table>
+
+ <!-- matome  -->  
+ <table width="800"> 
+ <tr>
+   <td>
+     <br>
+     <br>
+     以上の図から得られたことをまとめてみます。不動点\(X\)の近くの点\(X_{N}\)を決めると、\(X_{m}\) (\(m> N)\) は、<br><br>
+ （a）不動点\(X\)での関数\(f\)の傾きが\(1\)より大きいとき、不動点\(X\)から遠ざかる。<br>
+ （b）不動点\(X\)での関数\(f\)の傾きが\(-1\)より大きくて\(1\)より小さいとき、不動点\(X\)に近づいてゆく。<br>
+ （c）不動点\(X\)での関数\(f\)の傾きが\(-1\)より小さいとき、不動点\(X\)から遠ざかる。<br>
+     （d）不動点\(X\)での関数\(f\)の傾きが\(1\)か\(-1\)のとき、それだけの情報では何もわからない。<br>
+     <br>
+     <br>
+     ここで数学の表記を用いると、<br><br>
+    ｢ \(\mathbb{R}\)における\(X\)のある近傍\(\mathcal{U}\)が存在して、もし\(X_{N}\in \mathcal{U}\)ならば、任意の\(n\)に対して\(f^{n}(X_{N}) \in \mathcal{U}\)となり、
+     さらに\(n \to \infty\) のときに \(f^{n}(X_{N}) \to X\) となる、という性質を持つとき、\(X\)は\(f\)の<b>沈点</b>あるいは<b>吸引的不動点</b>という。
+     同様に、\(f\)の反復によって\(X\)以外の全ての点の軌道が\(\mathcal{U}\)の外に出ていくとき、\(X\)は\(f\)の<b>源点</b>あるいは<b>反発的不動点</b>という。」<br><br>
+     よって、数式を使ってまとめると以下になります。
+ </td>
+ </tr>
+ </table>
+    <table width="600"> 
+ <tr>
+   <td>
+     <br>
+     \(f\)が不動点\(X\)を持つとき、<br>
+     \(\Biggl| \frac{df}{dx} \mid_{x=X} \Biggr|>1 \)ならば、\(X\)は<b>源点（吸引的不動点）</b>である。<br>
+  \(\Biggl| \frac{df}{dx} \mid_{x=X} \Biggr|<1 \)ならば、\(X\)は<b>沈点（反発的不動点）</b>である。<br>
+  \(\Biggl| \frac{df}{dx} \mid_{x=X} \Biggr|=1 \)ならば、\(X\)の型については何の情報もない。
+ </td>
+ </tr>
+ </table>
+  
+<!--
+ <table width="800"> 
+ <tr>
+ <td>
+
+ </td>
+ </tr>
+ </table>
+ -->
+
+<!--twitter-->
+<a href="https://twitter.com/share"
+   class="twitter-share-button"
+   data-url="https://akiraenv01.github.io/website/nonlinear/nd_3.html"
+   data-text="不動点を探して（後編：グラフで考える）(Ak!ra Watanabe's homepageより)">Tweet
+</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+  if(!d.getElementById(id)){js=d.createElement(s);
+  js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+  fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+<br>
+
+<!--facebook-->
+<div class="fb-like"
+     data-href="https://akiraenv01.github.io/website/nonlinear/nd_3.html"
+     data-width=""
+     data-layout="box_count"
+     data-action="like"
+     data-size="small"
+     data-share="true">
+</div>
+<br>
+<br>
+
+<!--content-->
+ <table width="300"> 
+ <tr>
+ <td>
+<a href="nd_2.html">
+<font color="#33bb00">
+ 前のページへ戻る
+</font>
+</a>
+ </td>
+ <td>
+<!--
+<a href=".html">
+<font color="#33bb00">
+-->   
+  　次のページへ進む
+<!--
+</font>
+</a>
+-->  
+ </td> 
+ </tr>
+ </table>
+<br>
+<a href="nonlinear.html">
+<font color="#33bb00">
+ 「我流の非線型物理学」へ戻る
+</font>
+</a>
+<br>
+<br>
+<br>
+
+</div>
+</body>
+</html>
