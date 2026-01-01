@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<!--
+make 2017/2/10
+upgrade 2026/01/01
+-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+   Levi-Civita記号の恒等式の証明
+  </title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <base href="https://akiraenv01.github.io/website/research/">
+  <meta name="author" content="Ak!ra Watanabe's homepage">
+  <meta name="keywords" content="自由研究,Levi-Civita,レヴィ・チビタ,レビ・チビタ">
+</head>
+
+<body>
+<!--facebook-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--content-->
+<div align="center">
+<h1> Levi-Civita記号の恒等式の証明</h1>
+
+<br>
+<br>
+ <table width="800"> 
+ <tr>
+ <td>
+ <b> 以下の文章ではEinsteinの縮約が使われています。</b>
+ <br>
+ <br>
+ 連続体力学や電磁気学を勉強すると「Levi-Civitaの記号」なるものと出くわします。
+ 使い慣れるとなかなか便利な記号ですが、使いこなすために
+ </td>
+ </tr>
+ </table>
+ <br>
+
+ \(\epsilon_{ijk} \epsilon_{ilm} = \delta_{jl} \delta_{km} -\delta_{jm} \delta_{kl}\)
+ <br>
+ <br>
+ <table width="800"> 
+ <tr>
+ <td>
+
+ という恒等式を知っておく必要があります。ただしこの恒等式の証明がやたらと厄介で、本を読むとやけに技巧的な証明だけが載っており、初学者にはまず意味不明です（それとも私だけか...）。
+ というわけでこの式の泥臭い証明を考えてみます。
+ <br>
+ <br>
+ 方針としては左辺のijkとilmに注目して場合分けを行ってから取り組もうと思います。
+ <br>
+ よって
+ </td>
+ </tr>
+ </table>
+
+<br>
+ i)   \(j=k\) かつ \(l\neq m\)     <br>
+ ii)  \(j\neq k\) かつ \(l=m\)     <br>
+ iii) \(j=k\) かつ \(l=m\)         <br>
+ iv)  \(j\neq k\) かつ \(l\neq m\) <br>
+
+ <table width="800"> 
+ <tr>
+ <td>
+ として
+ <br>
+ <br>
+ i)   \(j=k\) かつ \(l\neq m\) のとき    <br>
+ </td>
+ </tr>
+ </table>
+   <table width="600"> 
+   <tr>
+   <td>
+   (左辺) \(= 0\) <br>
+   (右辺) \(= \delta_{jl} \delta_{jm} -\delta_{jm} \delta_{jl}=0\) <br>
+   よって<br>
+   (左辺) \(=\) (右辺) <br>
+   </td>
+   </tr>
+   </table>
+ <br>
+
+ <table width="800"> 
+ <tr>
+ <td>
+ ii)  \(j\neq k\) かつ \(l=m\)    <br>
+ </td>
+ </tr>
+ </table>
+   <table width="600"> 
+   <tr>
+   <td>
+   i)と同様にして<br>
+   (左辺) \(=\) (右辺) <br>
+   </td>
+   </tr>
+   </table>
+ <br>
+
+ <table width="800"> 
+ <tr>
+ <td>
+ iii) \(j=k\) かつ \(l=m\)       <br>
+ </td>
+ </tr>
+ </table>
+   <table width="600"> 
+   <tr>
+   <td>
+   (左辺) \(= 0\) <br>
+   (右辺) \(= \delta_{jl} \delta_{jl} -\delta_{jl} \delta_{jl}=0\) <br>
+   よって<br>
+   (左辺) \(=\) (右辺) <br>
+   </td>
+   </tr>
+   </table>
+ </td>
+ </tr>
+ </table>
+ <br>
+
+ <table width="800"> 
+ <tr>
+ <td>
+ iv) は、以下の4つに場合分けできる <br>
+ </td>
+ </tr>
+ </table>
+ 
+  iv-A) \(j\) < \(k\) かつ \(l\) < \(m\) <br>
+  iv-B) \(j\) < \(k\) かつ \(l\) > \(m\) <br>
+  iv-C) \(j\) > \(k\) かつ \(l\) < \(m\) <br>
+  iv-D) \(j\) > \(k\) かつ \(l\) > \(m\) <br>
+
+ <br>
+ <table width="800"> 
+ <tr>
+ <td>
+ iv-A) \(j\) < \(k\) かつ \(l\) < \(m\) のとき  <br>
+ </td>
+ </tr>
+ </table>
+   <table width="600"> 
+   <tr>
+   <td>
+    以下のような表を作る
+   </td>
+   </tr>
+   </table>
+ </td>
+ </tr>
+ </table>
+ 
+<table border>
+  <tr><th colspan="4">添え字</th><th colspan="2">式の値</th></tr>
+  <tr><td>j</td><td>k</td><td>l</td><td>m</td><td>左辺</td><td>右辺</td></tr>
+  <tr><td>1</td><td>2</td><td>1</td><td>2</td><td></td><td></td></tr>
+  <tr><td>1</td><td>2</td><td>1</td><td>3</td><td></td><td></td></tr>
+  <tr><td>1</td><td>2</td><td>2</td><td>3</td><td></td><td></td></tr>
+  <tr><td>1</td><td>3</td><td>1</td><td>2</td><td></td><td></td></tr>
+  <tr><td>1</td><td>3</td><td>1</td><td>3</td><td></td><td></td></tr>
+  <tr><td>1</td><td>3</td><td>2</td><td>3</td><td></td><td></td></tr>
+  <tr><td>2</td><td>3</td><td>1</td><td>2</td><td></td><td></td></tr>
+  <tr><td>2</td><td>3</td><td>1</td><td>3</td><td></td><td></td></tr>
+  <tr><td>2</td><td>3</td><td>2</td><td>3</td><td></td><td></td></tr>
+</table>
+
+
+<br>
+ <table width="600"> 
+ <tr>
+ <td>
+  添字\(j\), \(k\), \(l\), \(m\)に数字を代入して式の値を求める。例えば、<br>
+  \(j=l=1\) かつ \(k=m=2\) のとき <br>
+   (左辺) \(= \epsilon_{i12} \epsilon_{i12} = 0\cdot 0 + 0\cdot 0 +1 \cdot 1 = 1\) <br>
+   (右辺) \(= \delta_{11} \delta_{22} -\delta_{12} \delta_{21}=1\) <br>
+  <br>
+  この様にして表を完成させるとすべての場合で <br>  
+   (左辺) \(=\) (右辺) <br>
+  が成り立つ <br>
+
+ </td>
+ </tr>
+ </table>
+
+<table border>
+  <tr><th colspan="4">添え字</th><th colspan="2">式の値</th></tr>
+  <tr><td>j</td><td>k</td><td>l</td><td>m</td><td>左辺</td><td>右辺</td></tr>
+  <tr><td>1</td><td>2</td><td>1</td><td>2</td><td>1</td><td>1</td></tr>
+  <tr><td>1</td><td>2</td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+  <tr><td>1</td><td>2</td><td>2</td><td>3</td><td>0</td><td>0</td></tr>
+  <tr><td>1</td><td>3</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+  <tr><td>1</td><td>3</td><td>1</td><td>3</td><td>1</td><td>1</td></tr>
+  <tr><td>1</td><td>3</td><td>2</td><td>3</td><td>0</td><td>0</td></tr>
+  <tr><td>2</td><td>3</td><td>1</td><td>2</td><td>0</td><td>0</td></tr>
+  <tr><td>2</td><td>3</td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+  <tr><td>2</td><td>3</td><td>2</td><td>3</td><td>1</td><td>1</td></tr>
+</table>
+
+<br>
+ <table width="800"> 
+ <tr>
+ <td>
+ iv-B) \(j\) < \(k\) かつ \(l\) > \(m\) のとき  <br>
+ </td>
+ </tr>
+ </table>
+   <table width="600"> 
+   <tr>
+   <td>
+     \(m=L\), \(l=M\)とおけばiv-A)と同様に<br>
+   (左辺) \(=\) (右辺) <br>
+  が成り立つ <br>
+   </td>
+   </tr>
+   </table>
+  <br>
+ <table width="800"> 
+ <tr>
+ <td>
+ iv-C) \(j\) > \(k\) かつ \(l\) < \(m\) のとき  <br>
+ </td>
+ </tr>
+ </table>
+   <table width="600"> 
+   <tr>
+   <td>
+     \(k=J\), \(j=K\)とおけばiv-A)と同様に<br>
+   (左辺) \(=\) (右辺) <br>
+  が成り立つ <br>
+   </td>
+   </tr>
+   </table>
+  <br>
+ <table width="800"> 
+ <tr>
+ <td>
+ iv-D) \(j\) > \(k\) かつ \(l\) > \(m\) のとき  <br>
+ </td>
+ </tr>
+ </table>
+   <table width="600"> 
+   <tr>
+   <td>
+     \(k=J\), \(j=K\), \(m=L\), \(l=M\)とおけばiv-A)と同様に<br>
+   (左辺) \(=\) (右辺) <br>
+  が成り立つ <br>
+   </td>
+   </tr>
+   </table>
+  <br>
+
+ <table width="800"> 
+ <tr>
+ <td>
+  i),ii),iii),iv)より証明終了<br>
+  <br>
+  <br>
+  以上のように証明できたものの、この式の証明は一人一人が考えてみるのがよいでしょう。<b>ただし結構しんどいです。</b>
+ </td>
+ </tr>
+ </table>
+<br>
+
+<!--twitter-->
+<a href="https://twitter.com/share"
+   class="twitter-share-button"
+   data-url="https://akiraenv01.github.io/website/research/kogaku/levicivita.html"
+   data-text="Levi-Civita記号の恒等式の証明">Tweet
+</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+  if(!d.getElementById(id)){js=d.createElement(s);
+  js.id=id;
+  js.src=p+'://platform.twitter.com/widgets.js';
+  fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+<br>
+
+<!--facebook-->
+<div class="fb-like"
+     data-href="https://akiraenv01.github.io/website/research/kogaku/levicivita.html"
+     data-width=""
+     data-layout="box_count"
+     data-action="like"
+     data-size="small"
+     data-share="true">
+</div>
+<br>
+<br>
+
+<!--content-->
+<a href="research.html">
+<font color="#33bb00">
+「工学の小話」へ戻る
+</font>
+</a>
+<br>
+<br>
+<br>
+
+</div>
+</body>
+</html>
