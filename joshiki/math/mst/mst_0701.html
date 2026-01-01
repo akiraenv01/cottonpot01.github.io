@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<!--
+make 2017/2/9
+upgrade 2026/01/01
+-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+  特殊化、一般化（Specialization, Generalization） 例題１
+  </title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta name="author" content="Ak!ra Watanabe">
+  <meta name="keywords" content="小中学校で学びたかった,算数,数学">
+  <base href="https://akiraenv01.github.io/website/joshiki/math/">
+</head>
+
+<body>
+<!--facebook-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--content-->
+<div align="center">
+<h1>
+特殊化、一般化（Specialization, Generalization） 例題１
+</h1>
+ 
+<br>
+<br>
+ <table width="800">
+ <tr>
+ <td>
+<b>特殊化、一般化（Specialization, Generalization）</b>...<br>
+   具体的に考えることと、広く抽象的に考えることを学びます。<br>
+
+<br>
+（例題） <br>
+（１）正５角形の一つの内角の角度は何度でしょうか。<br>
+（２） \(n\) を３以上の整数とします。正 \(n\) 角形の一つの内角の角度は何度でしょうか。 <br>
+（３） （２）の答えの式から、正１００００角形の一つの内角の角度は何度か求めてください。 <br>
+<br>
+（考え方）<br>
+ </td>
+ </tr>
+ </table>
+
+ <table width="800">
+ <tr>
+ <td colspan="2">
+（１）を考えるために、まず図形を描いてみます。今回の主題ではありませんが、図形問題は「きちんと図を描いて適切な補助線を引いて考える」ことが解決の糸口となりやすいです。
+   この例題では、正５角形の重心Ｇをとってそこから各頂点へ線分を引いて解くことにします。線分を引くことで、正５角形の中に合同な二等辺三角形が５個できます。
+ </td>
+ </tr>
+
+ <tr>
+ <td width="400">
+　<img src="image/mst/m7table1.jpg" width="60%" height="45%" alt="画像が表示されていません"><br>
+ </td>
+ <td width="400">
+　<img src="image/mst/m7table2.jpg" width="60%" height="45%" alt="画像が表示されていません"><br>
+ </td>
+ </tr>
+
+ <tr>
+ <td width="400">
+そのうち一つの二等辺三角形を取り出し、その頂角を \(\alpha_{5}\)とすると<br>
+\begin{align*}
+ \alpha_{5}  = 360^\circ \div 5 = 72^\circ 
+\end{align*}
+であるから<br>
+ 
+\begin{align*}
+ \text{（一つの内角の角度）} &= \text{（水色の丸二つ分の角度）} \\
+                          &= 180^\circ - \alpha_{5} \\
+                          &= 180^\circ - 72^\circ \\
+                          &= 108^\circ 
+\end{align*}
+よって（１）の答えは \(108\) 度となります。
+ </td>
+ <td width="400">
+  <img src="image/mst/m7table3.jpg" width="60%" height="45%" alt="画像が表示されていません">
+ </td>
+ </tr>
+ </table>
+
+<br>
+<br>
+<br>
+ <table width="800">
+ <tr>
+ <td colspan="2">
+（１）では正５角形を考えましたが、同様に正６角形や正７角形、また正３角形や正４角形（正方形）の一つの内角の角度も考えることが出来そうです。
+   そこで、（２）では<b>より一般化して</b>正 \(n\) 角形を考えてみましょう。
+正 \(n\) 角形を考えるので、（１）のように全体像を図示することは出来ません。しかし、同じ解き方が出来そうです。
+そこで、正 \(n\) 角形の重心Ｇから各頂点へ線分を引き、 \(n\) 個の合同な二等辺三角形を作ります。
+ </td> 
+ </tr>
+
+ <tr>
+ <td width="400">
+そのうち一つの二等辺三角形を取り出し、その頂角を \(\alpha_{n}\)とすると<br>
+
+  \begin{align*}
+   \alpha_{n}      = 360^\circ \div n = \frac{360^\circ}{n} 
+  \end{align*}
+
+であるから<br>
+  
+  \begin{align*}
+   \text{（一つの内角の角度）} &= \text{（水色の丸二つ分の角度）} \\
+                            &= 180^\circ - \alpha_{n} \\
+                            &= 180^\circ - \frac{360^\circ}{n} \\
+                           (&= \Bigl(1 - \frac{2}{n} \Bigr) \times 180^\circ )
+  \end{align*}
+  よって（２）の答えは \( \bigl(180 - \frac{360}{n} \bigr) \) 度となります。
+ </td>
+ <td width="400">
+  <img src="image/mst/m7table4.jpg" width="40%" height="30%" alt="画像が表示されていません">
+ </td> 
+ </tr>
+ </table>
+
+<br>
+<br>
+<br>
+
+ <table width="800">
+ <tr>
+ <td>
+（３）は（２）で得られた「一般化された式」に \(n=10000\) を代入して<b>特殊化する</b>ことで答えを出します。
+\begin{align*}
+ \text{（一つの内角の角度）} &= 180^\circ - \frac{360^\circ}{10000} \\
+                          &= 180^\circ - 0.036^\circ \\
+                          &= 179.964^\circ 
+\end{align*}
+よって（３）の答えは \(179.964\) 度となります。<br>
+<br>
+<br>
+<br>
+※もしも（２）で \(n\) 角形の内角の和が<br>
+\begin{align*}
+  (n-2) \times 180^\circ 
+\end{align*}
+で表されることを知っている方は<br>
+\begin{align*}
+ \text{（一つの内角の角度）} &= ((n-2) \times 180^\circ) \div n \\
+                          &= \Bigl(1 - \frac{2}{n} \Bigr) \times 180^\circ 
+\end{align*}
+という解き方でも正解です。
+ </td>
+ </tr>
+ </table>
+
+<br>
+
+<!--twitter-->
+<a href="https://twitter.com/share"
+   class="twitter-share-button"
+   data-url="http://akiraenv01.github.io/website/joshiki/math/mst/mst_0701.html"
+   data-text="数学の方略「特殊化、一般化（Specialization, Generalization）」 例題１ (Ak!ra Watanabe's homepageより)">Tweet
+</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+  if(!d.getElementById(id)){js=d.createElement(s);
+  js.id=id;
+  js.src=p+'://platform.twitter.com/widgets.js';
+  fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+<br>
+
+<!--facebook-->
+<div class="fb-like"
+     data-href="https://akiraenv01.github.io/website/joshiki/math/mst/mst_0701.html"
+     data-width=""
+     data-layout="box_count"
+     data-action="like"
+     data-size="small"
+     data-share="true">
+</div>
+<br>
+<br>
+
+<!--content-->
+<a href="math_strategy.html">
+<font color="#33bb00">
+数学の方略（ほうりゃく）へ戻る
+</font>
+</a>
+<br>
+<br>
+
+</div>
+</body>
+</html>
